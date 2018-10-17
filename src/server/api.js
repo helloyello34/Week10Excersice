@@ -2,13 +2,13 @@
 
 const express = require("express");
 const app = express();
-const greeting = require('./greeting');
+const greeting = require('../logic/greeting');
 
 app.get("/greeting/:name", (req, res) => {
   // Fill in your code that:
   // 1. set's the status to 200
   // 2. and returns an object with the greeting
-  
+
   // hint 'req.params.name'
   // console.log(req);
   res.status = 200;
