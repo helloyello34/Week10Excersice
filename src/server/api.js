@@ -1,23 +1,10 @@
-// /scr/api.js
-
+// src/api.js
 const express = require("express");
-const app = express();
-const greeting = require('../logic/greeting');
+const router = express.Router();
 
-app.get("/greeting/:name", (req, res) => {
-  // Fill in your code that:
-  // 1. set's the status to 200
-  // 2. and returns an object with the greeting
-
-  // hint 'req.params.name'
-  // console.log(req);
-  res.status = 200;
-  if(req.params.name === "_") {
-	res.sendStatus(res.status);
-  } else {
-	var result = greeting(req.params.name);
-	res.send({ greeting: result });
-  }
+router.get("/greeting/:name", (req, res) => {
+  // Fix this code
+  res.send("Hi there");
 });
 
-module.exports = app;
+module.exports = router;

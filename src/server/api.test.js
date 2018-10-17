@@ -1,13 +1,9 @@
 const request = require("supertest");
-const api = require("./api");
+const app = require("../app");
 
-describe("GET /greeting/:name endpoint", () => {
-  it("should return 200 OK status code", async() => {
-    const res = await request(api).get("/greeting/_");
-    expect(res.status).toBe(200);
-  });
-  it("should return the greeting in a object", async() => {
-    const res = await request(api).get("/greeting/Diana");
-    expect(res.body.greeting).toBe("Hello, Diana!");
+describe("GET endpoint with name should return greeting", () => {
+  it("Should return status code 200", async () => {
+    const res = await request(app).get("/api/greeting/_");
+    expect(res.status).toBe(200);  
   });
 });
