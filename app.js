@@ -10,4 +10,4 @@ express()
 	.listen(PORT, () => console.log('listening on ${ PORT }'))
 
 
-module.exports = app;
+//module.exports = app;
