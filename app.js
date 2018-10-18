@@ -1,13 +1,13 @@
-// App.js
+// app.js
 
 const express = require("express");
-const app = express();
-const api = require("./server");
+const path = require('path');
+const PORT = process.env.PORT || 5000
 
-app.use("./server.js", api);
+express()
+	.use(express.static(path.join(__dirname, 'dist')))
+	.get('/', (req, res) => res.render('dist/index.html'))
+	.listen(PORT, () => console.log('listening on ${ PORT }'))
 
-app.get("*", (req, res) => {
-  res.send({ error: "No route defined" });
-});
 
 module.exports = app;
